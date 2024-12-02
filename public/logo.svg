@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background Circle with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60A5FA"/>
+      <stop offset="100%" style="stop-color:#3B82F6"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <circle cx="100" cy="100" r="90" fill="url(#bgGradient)"/>
+  
+  <!-- Central Happy Face -->
+  <g transform="translate(100,100)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="35" fill="#FFF" />
+    <!-- Eyes with more character -->
+    <path d="M-15,-10 Q-12,-15 -9,-10" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M9,-10 Q12,-15 15,-10" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <!-- Bigger, friendlier smile -->
+    <path d="M-20,5 Q0,25 20,5" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </g>
+  
+  <!-- Surrounding Happy Faces -->
+  <g transform="translate(100,100)">
+    <!-- Top Face -->
+    <g transform="translate(0,-50)" filter="url(#shadow)">
+      <circle cx="0" cy="0" r="25" fill="#FFF"/>
+      <path d="M-10,-5 Q-8,-8 -6,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M6,-5 Q8,-8 10,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M-12,5 Q0,15 12,5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </g>
+    
+    <!-- Bottom Right Face -->
+    <g transform="translate(43,25)" filter="url(#shadow)">
+      <circle cx="0" cy="0" r="25" fill="#FFF"/>
+      <path d="M-10,-5 Q-8,-8 -6,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M6,-5 Q8,-8 10,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M-12,5 Q0,15 12,5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </g>
+    
+    <!-- Bottom Left Face -->
+    <g transform="translate(-43,25)" filter="url(#shadow)">
+      <circle cx="0" cy="0" r="25" fill="#FFF"/>
+      <path d="M-10,-5 Q-8,-8 -6,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M6,-5 Q8,-8 10,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M-12,5 Q0,15 12,5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+  
+  <!-- Connecting Lines -->
+  <g transform="translate(100,100)" stroke="#FFF" stroke-width="3" stroke-linecap="round" opacity="0.6">
+    <path d="M0,-35 L0,-25"/>
+    <path d="M30,17 L18,25"/>
+    <path d="M-30,17 L-18,25"/>
+  </g>
+</svg>
