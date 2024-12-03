@@ -8,30 +8,25 @@ import LoadingSpinner from './components/common/LoadingSpinner';
 const TeamView = lazy(() => import('./pages/TeamView'));
 const Projection = lazy(() => import('./pages/Projection'));
 const Setup = lazy(() => import('./pages/Setup'));
-const Join = lazy(() => import('./pages/Join'));
-const Login = lazy(() => import('./pages/Login'));
 
 // Páginas protegidas
-const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
-const AdminSettings = lazy(() => import('./pages/admin/Settings'));
-const Profile = lazy(() => import('./pages/Profile'));
+//const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
+//const AdminSettings = lazy(() => import('./pages/admin/Settings'));
 
 // Configuración de rutas
 const publicRoutes = [
   { path: '/', element: TeamView },
   { path: '/projection', element: Projection },
-  { path: '/login', element: Login },
-  { path: '/join/:code', element: Join }
+  { path: '/setup', element: Setup }
 ];
 
 const protectedRoutes = [
-  { path: '/setup', element: Setup },
-  { path: '/profile', element: Profile },
+
 ];
 
 const adminRoutes = [
-  { path: '/admin', element: AdminDashboard },
-  { path: '/admin/settings', element: AdminSettings },
+  //{ path: '/admin', element: AdminDashboard },
+  //{ path: '/admin/settings', element: AdminSettings },
 ];
 
 const specialRoutes = [
@@ -39,7 +34,7 @@ const specialRoutes = [
 
 function App() {
   return (
-    <Router>
+    <Router className="h-full">
       <AuthProvider>
         <Suspense 
           fallback={

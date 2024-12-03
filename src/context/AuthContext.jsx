@@ -72,7 +72,6 @@ export function AuthProvider({ children }) {
         email: user.email,
         name: userData.name || '',
         photoURL: userData.photoURL || '',
-        ...userData,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       });

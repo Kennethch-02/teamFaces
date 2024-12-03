@@ -16,7 +16,7 @@ export const ProtectedRoute = ({
     if (!loading) {
       // Caso 1: Requiere auth pero no hay usuario
       if (!user && requireAuth) {
-        setRedirectPath("/login");
+        setRedirectPath("/");
         setShouldRedirect(true);
         return;
       }

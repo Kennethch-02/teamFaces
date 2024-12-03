@@ -94,12 +94,6 @@ const TeamView = () => {
               >
                 Modo Proyección
               </button>
-              <button
-                onClick={() => setShowJoinModal(true)}
-                className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
-              >
-                Unirse al Equipo
-              </button>
             </div>
           </div>
         </div>
