@@ -24,10 +24,10 @@
   <g transform="translate(100,100)" filter="url(#shadow)">
     <circle cx="0" cy="0" r="35" fill="#FFF" />
     <!-- Eyes with more character -->
-    <path d="M-15,-10 Q-12,-15 -9,-10" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" fill="none"/>
-    <path d="M9,-10 Q12,-15 15,-10" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M-15,-10 Q-12,-15 -9,-10" stroke="#3B82F6" strokeWidth="4" strokeLinecap="round" fill="none"/>
+    <path d="M9,-10 Q12,-15 15,-10" stroke="#3B82F6" strokeWidth="4" strokeLinecap="round" fill="none"/>
     <!-- Bigger, friendlier smile -->
-    <path d="M-20,5 Q0,25 20,5" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M-20,5 Q0,25 20,5" stroke="#3B82F6" strokeWidth="4" strokeLinecap="round" fill="none"/>
   </g>
   
   <!-- Surrounding Happy Faces -->
@@ -35,30 +35,30 @@
     <!-- Top Face -->
     <g transform="translate(0,-50)" filter="url(#shadow)">
       <circle cx="0" cy="0" r="25" fill="#FFF"/>
-      <path d="M-10,-5 Q-8,-8 -6,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M6,-5 Q8,-8 10,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M-12,5 Q0,15 12,5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M-10,-5 Q-8,-8 -6,-5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" fill="none"/>
+      <path d="M6,-5 Q8,-8 10,-5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" fill="none"/>
+      <path d="M-12,5 Q0,15 12,5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" fill="none"/>
     </g>
     
     <!-- Bottom Right Face -->
     <g transform="translate(43,25)" filter="url(#shadow)">
       <circle cx="0" cy="0" r="25" fill="#FFF"/>
-      <path d="M-10,-5 Q-8,-8 -6,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M6,-5 Q8,-8 10,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M-12,5 Q0,15 12,5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M-10,-5 Q-8,-8 -6,-5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" fill="none"/>
+      <path d="M6,-5 Q8,-8 10,-5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" fill="none"/>
+      <path d="M-12,5 Q0,15 12,5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" fill="none"/>
     </g>
     
     <!-- Bottom Left Face -->
     <g transform="translate(-43,25)" filter="url(#shadow)">
       <circle cx="0" cy="0" r="25" fill="#FFF"/>
-      <path d="M-10,-5 Q-8,-8 -6,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M6,-5 Q8,-8 10,-5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M-12,5 Q0,15 12,5" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M-10,-5 Q-8,-8 -6,-5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" fill="none"/>
+      <path d="M6,-5 Q8,-8 10,-5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" fill="none"/>
+      <path d="M-12,5 Q0,15 12,5" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" fill="none"/>
     </g>
   </g>
   
   <!-- Connecting Lines -->
-  <g transform="translate(100,100)" stroke="#FFF" stroke-width="3" stroke-linecap="round" opacity="0.6">
+  <g transform="translate(100,100)" stroke="#FFF" strokeWidth="3" strokeLinecap="round" opacity="0.6">
     <path d="M0,-35 L0,-25"/>
     <path d="M30,17 L18,25"/>
     <path d="M-30,17 L-18,25"/>

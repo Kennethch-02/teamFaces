@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import { useEffect, useState } from "react";
 
 export const ProtectedRoute = ({
   children,
@@ -8,8 +9,37 @@ export const ProtectedRoute = ({
 }) => {
   const { user, loading } = useAuth();
   const location = useLocation();
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+  const [redirectPath, setRedirectPath] = useState("");
 
-  // Manejar el estado de carga
+  useEffect(() => {
+    if (!loading) {
+      // Caso 1: Requiere auth pero no hay usuario
+      if (!user && requireAuth) {
+        setRedirectPath("/login");
+        setShouldRedirect(true);
+        return;
+      }
+
+      // Caso 2: Usuario autenticado en ruta que no requiere auth
+      if (user && !requireAuth) {
+        setRedirectPath("/dashboard");
+        setShouldRedirect(true);
+        return;
+      }
+
+      // Caso 3: Verificación de roles
+      if (allowedRoles.length > 0 && !allowedRoles.includes(user?.role)) {
+        setRedirectPath("/unauthorized");
+        setShouldRedirect(true);
+        return;
+      }
+
+      setShouldRedirect(false);
+    }
+  }, [user, loading, requireAuth, allowedRoles]);
+
+  // Mostrar loading spinner mientras se verifica la autenticación
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -18,20 +48,6 @@ export const ProtectedRoute = ({
     );
   }
 
-  // Redirigir a login si no está autenticado y la ruta requiere auth
-  if (!user && requireAuth) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
-  }
-
-  // Redirigir al dashboard si está autenticado y la ruta no requiere auth
-  if (user && !requireAuth) {
-    return <Navigate to="/dashboard" replace />;
-  }
-
-  // Verificar roles si se especifican
-  if (allowedRoles.length > 0 && !allowedRoles.includes(user?.role)) {
-    return <Navigate to="/unauthorized" replace />;
-  }
-
+  // Renderizar children si todas las verificaciones pasan
   return children;
 };
