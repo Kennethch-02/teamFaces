@@ -104,7 +104,7 @@ const Profile = () => {
 
       // Actualizar perfil de autenticación
       await updateUserProfile({
-        displayName: profileData.name,
+        name: profileData.name,
         photoURL: photoUrl
       });
 

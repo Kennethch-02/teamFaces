@@ -64,7 +64,7 @@ const Join = () => {
 
       // 1. Crear cuenta de usuario
       const userCredential = await signup(formData.email, formData.password, {
-        displayName: formData.name,
+        name: formData.name,
         role: 'member'
       });
 

@@ -60,17 +60,17 @@ export function AuthProvider({ children }) {
       setError(null);
       const { user } = await createUserWithEmailAndPassword(auth, email, password);
       
-      // Actualizar perfil con displayName si se proporciona
-      if (userData.displayName) {
+      // Actualizar perfil con name si se proporciona
+      if (userData.name) {
         await updateProfile(user, {
-          displayName: userData.displayName
+          name: userData.name
         });
       }
       
       // Crear documento de usuario en Firestore
       await setDoc(doc(db, 'users', user.uid), {
         email: user.email,
-        displayName: userData.displayName || '',
+        name: userData.name || '',
         photoURL: userData.photoURL || '',
         ...userData,
         createdAt: new Date().toISOString(),
@@ -125,9 +125,9 @@ export function AuthProvider({ children }) {
       const user = auth.currentUser;
 
       // Actualizar Auth Profile
-      if (data.displayName || data.photoURL) {
+      if (data.name || data.photoURL) {
         await updateProfile(user, {
-          displayName: data.displayName,
+          name: data.name,
           photoURL: data.photoURL
         });
       }

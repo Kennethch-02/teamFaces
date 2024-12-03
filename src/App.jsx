@@ -18,13 +18,13 @@ const Profile = lazy(() => import('./pages/Profile'));
 
 // Configuración de rutas
 const publicRoutes = [
-  { path: '/login', element: Login },
-  { path: '/join/:code', element: Join },
+  { path: '/', element: TeamView },
   { path: '/projection', element: Projection },
+  { path: '/login', element: Login },
+  { path: '/join/:code', element: Join }
 ];
 
 const protectedRoutes = [
-  { path: '/', element: TeamView },
   { path: '/setup', element: Setup },
   { path: '/profile', element: Profile },
 ];

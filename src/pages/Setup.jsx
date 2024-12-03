@@ -16,7 +16,7 @@ const Setup = () => {
   // Redirigir si ya hay un usuario autenticado
   useEffect(() => {
     if (user) {
-      navigate('/admin');
+      navigate('/');
     }
   }, [user, navigate]);
   
@@ -33,7 +33,8 @@ const Setup = () => {
     name: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    role: 'admin'
   });
 
   const handleLogoChange = (e) => {
@@ -105,7 +106,7 @@ const Setup = () => {
 
     try {
       // 1. Crear cuenta de administrador
-      const userCredential = await signup(adminData.email, adminData.password);
+      const userCredential = await signup(adminData.email, adminData.password, adminData);
       
       // 2. Subir logo si existe
       let logoUrl = null;
@@ -124,7 +125,7 @@ const Setup = () => {
         name: teamData.name,
         description: teamData.description || '',
         logoUrl,
-        adminId: userCredential.user.uid,
+        adminId: userCredential.uid,
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
         settings: {
@@ -135,7 +136,7 @@ const Setup = () => {
       });
 
       // 4. Crear documento de miembro admin
-      const memberRef = doc(db, 'teams/default/members', userCredential.user.uid);
+      const memberRef = doc(db, 'teams/default/members', userCredential.uid);
       await setDoc(memberRef, {
         name: adminData.name,
         email: adminData.email,

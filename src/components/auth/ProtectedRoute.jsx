@@ -48,6 +48,9 @@ export const ProtectedRoute = ({
     );
   }
 
+  if (shouldRedirect) {
+    return <Navigate to={redirectPath} />;
+  }
   // Renderizar children si todas las verificaciones pasan
   return children;
 };
